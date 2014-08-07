@@ -1,0 +1,123 @@
+<header>
+    <div class='container' ng-controller="TypeaheadCtrl">
+        <div id="header-welcome" class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h1>{{translation.SCIENTIFICNAME}}</h1>
+                <div class="input-group form-group">
+                    <input type="text" ng-model="query.scientificName" 
+                           id="autofocus"
+                           placeholder="{{translation.SCIENTIFICNAME}}" 
+                           typeahead-min-length=3 
+                           typeahead="name for name in getNames($viewValue) | filter:$viewValue" 
+                           typeahead-loading="loadingNames" 
+                           class="form-control">
+                    <span class="input-group-btn">
+                        <button ng-click="$parent.searchSpecies()" class="btn btn-primary">{{translation.SEARCH}}</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="header-bottom-border">&nbsp;</div>
+<div class="container search-form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group" id="dateRange">
+                <label for="dateRange">{{translation.DATERANGE}}</label>
+                <div>
+                    <span class="input-group" id="eventDateLow">
+                        <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="eventDateLow" is-open="openedLow" min="1707-05-23" max="maxDate" datepicker-options="dateOptions" ng-required="true" show-button-bar="false" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="open($event,'openedLow')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </span>
+                    <span class="input-group" id="eventDateHigh">
+                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="eventDateHigh" is-open="openedHigh" min="1707-05-23" max="maxDate" datepicker-options="dateOptions" ng-required="false" show-button-bar="false" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="open($event, 'openedHigh')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="basisOfRecord">{{translation.BASISOFRECORD}}</label>
+                <select id="basisOfRecord" class="form-control" ng-model="query.basisOfRecord">
+                    <option>Fossil Specimen</option>
+                    <option>Living Specimen</option>
+                    <option>Human Observation</option>
+                    <option>Machine Observation</option>
+                    <option>Preserved Specimen</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="catalogNumber">{{translation.CATALOGNUMBER}}</label>
+                <input id="catalogNumber" type="text" ng-model="query.catalogNumber"
+                       placeholder="{{translation.CATALOGNUMBER}}"
+                       class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="recordedBy">{{translation.COLLECTOR}}</label>
+                <input id="recordedBy" type="text" ng-model="query.recordedBy"
+                       placeholder="{{translation.COLLECTOR}}"
+                       class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="fieldnumber">{{translation.FIELDNUMBER}}</label>
+                <input id="recordedBy" type="text" ng-model="query.fieldNumber"
+                       placeholder="{{translation.FIELDNUMBER}}"
+                       class="form-control">
+            </div>            
+            
+            <div class="form-group">
+                <label for="institutionCode">{{translation.INSTITUTIONCODE}}</label>
+                <input id="institutionCode" type="text" ng-model="query.institutionCode"
+                        placeholder="{{translation.INSTITUTIONCODE}}"
+                        class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="collectionCode">{{translation.COLLECTIONCODE}}</label>
+                <input id="collectionCode" type="text" ng-model="query.collectionCode"
+                       placeholder="{{translation.COLLECTIONCODE}}"
+                       class="form-control">            
+            </div>
+
+            <div class="form-group">
+                <label for="continent">{{translation.CONTINENT}}</label>
+                <input id="continent" type="text" ng-model="query.continent"
+                       placeholder="{{translation.CONTINENT}}"
+                       class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="country">{{translation.COUNTRY}}</label>
+                <input id="country" type="text" ng-model="query.country"
+                       placeholder="{{translation.COUNTRY}}" 
+                       class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="stateProvince">{{translation.STATEPROVINCE}}</label>
+                <input id="stateProvince" type="text" ng-model="query.stateProvince"
+                       placeholder="{{translation.STATEPROVINCE}}"
+                       class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="county">{{translation.COUNTY}}</label>
+                <input id="county" type="text" ng-model="query.county"
+                       placeholder="{{translation.COUNTY}}"
+                       class="form-control">            
+            </div>            
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="map">Bounding box</label>
+                <div id="map" style="height: 430px;width: 100%" ng-controller="MapSelectCtrl"></div>
+            </div>            
+        </div>        
+    </div>
+</div>

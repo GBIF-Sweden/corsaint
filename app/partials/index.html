@@ -1,0 +1,34 @@
+<header>
+    <div class="container">
+        <div id="header-welcome" class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h1>Corsaint</h1>
+                <h2>Lorem ipsum dolor sit amet</h2>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 lead">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque egestas justo ac magna commodo, et ornare ipsum faucibus. 
+                <br><strong>{{izeure.response | number}}</strong> indexed records avaiable!
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</header>
+<div id="header-bottom-border">&nbsp;</div>
+<div id="search-box" class='container' ng-controller="TypeaheadCtrl">
+
+    <div class="input-group form-group">
+        <input type="text" ng-click="toForm()" ng-focus="toForm()" placeholder="{{translation.SCIENTIFICNAME}}" class="form-control">
+        <span class="input-group-btn">
+            <button ng-click="toForm()" class="btn btn-primary">{{translation.SEARCH}}</button>
+        </span>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque egestas justo ac magna commodo, et ornare ipsum faucibus. Duis in aliquam lorem. Proin sit amet elit eget metus dapibus porta a ac turpis. Ut at faucibus orci. Sed placerat nisi purus, in vehicula tellus hendrerit quis. Morbi et blandit elit, ut imperdiet urna. Cras porttitor ante ac sem feugiat, eu fringilla ante fringilla. Ut molestie et arcu sit amet auctor. Nunc tristique commodo luctus. 
+        </div>
+        <div class="col-md-6">
+            Curabitur tempus mauris ac porttitor tempor. Quisque ullamcorper lacinia velit. Etiam ultrices, augue ac pretium sagittis, diam risus vehicula urna, a scelerisque massa mi in orci. Phasellus risus justo, suscipit et nulla ornare, rutrum cursus nulla. Vestibulum iaculis nulla at laoreet facilisis. Nullam vulputate, ante in aliquam adipiscing, neque mauris tristique tellus, ac commodo felis nibh nec odio. Sed tincidunt tellus sed ipsum tincidunt volutpat. Sed ut sollicitudin metus. Aenean faucibus nulla ut tellus luctus dignissim. Sed mattis nisl quis diam eleifend, eu dapibus urna faucibus. Suspendisse vehicula imperdiet massa, sed volutpat urna euismod at. Vestibulum volutpat, velit eu fringilla euismod, arcu enim pretium nisi, non eleifend purus sapien vitae mauris. Vestibulum quam nunc, blandit at rutrum a, malesuada et nulla. 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+*.class
+*.iml
+.idea
+target/
+nbproject/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+.classpath
+.project

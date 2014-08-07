@@ -1,0 +1,684 @@
+<header>
+    <div class="container">
+        <div id="header-welcome" class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h1>{{occurrence["dwc:scientificName"]}}</h1>           
+                <h2>Occurrence ID: {{occurrence["dwc:occurrenceID"]}}</h2>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="header-bottom-border">&nbsp;</div>
+<div class="container result-list">
+    <div ng-if="recordSection" class="container">
+        <!-- Record 19 fields -->
+        <h3>{{translation.RECORD}}</h3>
+        <hr>
+        <div ng-if='occurrence["dc:type"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.TYPE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dc:type"]}}</span>
+        </div> 
+        <div ng-if='occurrence["dc:modified"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.MODIFIED}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dc:modified"]}}</span>
+        </div> 
+        <div ng-if='occurrence["dc:language"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.LANGUAGE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dc:language"]}}</span>
+        </div> 
+        <div ng-if='occurrence["dc:rights"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.RIGHTS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dc:rights"]}}</span>
+        </div> 
+        <div ng-if='occurrence["dc:rightsHolder"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.RIGHTSHOLDER}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dc:rightsHolder"]}}</span>
+        </div>
+        <div ng-if='occurrence["dc:accessRights"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ACCESSRIGHTS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dc:accessRights"]}}</span>
+        </div>
+        <div ng-if='occurrence["dc:bibliographicCitation"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.BIBLIOGRAPHICCITATION}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dc:bibliographicCitation"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:institutionID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.INSTITUTIONID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:institutionID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:collectionID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.COLLECTIONID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:collectionID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:datasetID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.DATASETID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:datasetID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:institutionCode"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.INSTITUTIONCODE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:institutionCode"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:collectionCode"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.COLLECTIONCODE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:collectionCode"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:datasetName"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.DATASETNAME}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:datasetName"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:ownerInstitutionCode"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.OWNERINSTITUTIONCODE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:ownerInstitutionCode"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:basisOfRecord"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.BASISOFRECORD}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:basisOfRecord"]}}</span>
+        </div> 
+        <div ng-if='occurrence["dwc:informationWithheld"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.INFORMATIONWITHHELD}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:informationWithheld"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:dataGeneralizations"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.DATAGENERALIZATIONS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:dataGeneralizations"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:dynamicProperties"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.DYNAMICPROPERTIES}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:dynamicProperties"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:source"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.SOURCE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:source"]}}</span>
+        </div>
+    </div>
+    <div ng-if="occurrenceSection" class="container">
+        <h3>{{translation.OCCURRENCE}}</h3>
+        <hr>
+        <div ng-if='occurrence["dwc:catalogNumber"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.CATALOGNUMBER}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:catalogNumber"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:occurrenceDetails"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.OCCURRENCEDETAILS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:occurrenceDetails"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:occurrenceRemarks"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.OCCURRENCEREMARKS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:occurrenceRemarks"]}}</span>
+        </div>
+         <div ng-if='occurrence["dwc:recordNumber"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.RECORDNUMBER}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:recordNumber"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:recordedBy"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.RECORDEDBY}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:recordedBy"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:individualID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.INDIVIDUALID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:individualID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:individualCount"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.INDIVIDUALCOUNT}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:individualCount"]}}</span>
+        </div>
+         <div ng-if='occurrence["dwc:sex"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.SEX}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:sex"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:lifeStage"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.LIFESTAGE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:lifeStage"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:reproductiveCondition"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.REPRODUCTIVECONDITION}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:reproductiveCondition"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:behavior"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.BEHAVIOR}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:behavior"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:establishmentMeans"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ESTABLISHMENTMEANS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:establishmentMeans"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:occurrenceStatus"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.OCCURRENCESTATUS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:occurrenceStatus"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:preparations"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.PREPARATIONS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:preparations"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:disposition"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.DISPOSITION}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:disposition"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:otherCatalogNumbers"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.OTHERCATALOGNUMBERS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:otherCatalogNumbers"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:previousIdentifications"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.PREVIOUSIDENTIFICATIONS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:previousIdentifications"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:associatedMedia"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ASSOCIATEDMEDIA}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:associatedMedia"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:associatedReferences"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ASSOCIATEDREFERENCES}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:associatedReferences"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:associatedOccurrences"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ASSOCIATEDOCCURRENCES}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:associatedOccurrences"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:associatedSequences"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ASSOCIATEDSEQUENCES}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:associatedSequences"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:associatedTaxa"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ASSOCIATEDTAXA}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:associatedTaxa"]}}</span>
+        </div>
+    </div>    
+    <div ng-if="eventSection" class="container">
+        <h3>{{translation.EVENT}}</h3>
+        <hr>
+        <div ng-if='occurrence["dwc:eventID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.EVENTID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:eventID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:samplingProtocol"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.SAMPLINGPROTOCOL}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:samplingProtocol"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:samplingEffort"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.SAMPLINGEFFORT}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:samplingEffort"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:eventDate"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.EVENTDATE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:eventDate"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:eventTime"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.EVENTTIME}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:eventTime"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:startDayOfYear"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.STARTDAYOFYEAR}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:startDayOfYear"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:endDayOfYear"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ENDDAYOFYEAR}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:endDayOfYear"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:year"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.YEAR}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:year"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:month"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.MONTH}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:month"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:day"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.DAY}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:day"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:verbatimEventDate"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.VERBATIMEVENTDATE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimEventDate"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:habitat"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.HABITAT}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:habitat"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:fieldNumber"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.FIELDNUMBER}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:fieldNumber"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:fieldNotes"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.FIELDNOTES}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:fieldNotes"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:eventRemarks"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.EVENTREMARKS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:eventRemarks"]}}</span>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Location 43 fields -->
+        <h3>{{translation.LOCATION}}</h3>
+        <hr>
+        <div class="col-md-6">
+            <div class="row">
+                <div id="map" style="height: 400px;width: 100%"></div>            
+            </div>
+        </div>
+        <div class="{{showMap?'col-md-6':'containter-fluid'}}">
+            <div ng-if='occurrence["dwc:locationID"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.LOCATIONID}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:locationID"]}}</span>
+            </div>
+            <div ng-if='occurrence["dwc:higherGeographyID"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.HIGHERGEOGRAPHYID}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:higherGeographyID"]}}</span>
+            </div>        
+            <div ng-if='occurrence["dwc:higherGeography"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.HIGHERGEOGRAPHY}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:higherGeography"]}}</span>
+            </div>           
+            <div ng-if='occurrence["dwc:continent"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.CONTINENT}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:continent"]}}</span>
+            </div>
+            <div ng-if='occurrence["dwc:waterBody"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.WATERBODY}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:waterBody"]}}</span>
+            </div>
+            <div ng-if='occurrence["dwc:islandGroup"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.ISLANDGROUP}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:islandGroup"]}}</span>
+            </div>
+            <div ng-if='occurrence["dwc:island"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.ISLAND}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:island"]}}</span>
+            </div>        
+            <div ng-if='occurrence["dwc:country"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.COUNTRY}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:country"]}}</span>            
+            </div>
+            <div ng-if='occurrence["dwc:countryCode"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.COUNTRYCODE}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:countryCode"]}}</span>            
+            </div>        
+            <div ng-if='occurrence["dwc:stateProvince"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.STATEPROVINCE}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:stateProvince"]}}</span>            
+            </div>        
+            <div ng-if='occurrence["dwc:county"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.COUNTY}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:county"]}}</span>
+            </div>
+            <div ng-if='occurrence["dwc:municipality"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.MUNICIPALITY}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:municipality"]}}</span>
+            </div>
+            <div ng-if='occurrence["dwc:locality"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.LOCALITY}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:locality"]}}</span>
+            </div>    
+            <div ng-if='occurrence["dwc:verbatimLocality"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.VERBATIMLOCALITY}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimLocality"]}}</span>
+            </div>        
+            <div ng-if='occurrence["dwc:verbatimElevation"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.VERBATIMELEVATION}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimElevation"]}}</span>
+            </div>         
+            <div ng-if='occurrence["dwc:minimumElevationInMeters"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.MINIMUMELEVATIONINMETERS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:minimumElevationInMeters"]}}</span>
+            </div>       
+            <div ng-if='occurrence["dwc:maximumElevationInMeters"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.MAXIMUMELEVATIONINMETERS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:maximumElevationInMeters"]}}</span>
+            </div>        
+            <div ng-if='occurrence["dwc:verbatimDepth"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.VERBATIMDEPTH}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimDepth"]}}</span>
+            </div> 
+            <div ng-if='occurrence["dwc:minimumDepthInMeters"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.MINIMUMDEPTHINMETERS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:minimumDepthInMeters"]}}</span>
+            </div>       
+            <div ng-if='occurrence["dwc:maximumDepthInMeters"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.MAXIMUMDEPTHINMETERS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:maximumDepthInMeters"]}}</span>
+            </div>    
+            <div ng-if='occurrence["dwc:minimumDistanceAboveSurfaceInMeters"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.MINIMUMDISTANCEABOVESURFACEINMETERS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:minimumDistanceAboveSurfaceInMeters"]}}</span>
+            </div>       
+            <div ng-if='occurrence["dwc:maximumDistanceAboveSurfaceInMeters"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.MAXIMUMDISTANCEABOVESURFACEINMETERS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:maximumDistanceAboveSurfaceInMeters"]}}</span>
+            </div>         
+            <div ng-if='occurrence["dwc:locationAccordingTo"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.LOCATIONACCORDINGTO}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:locationAccordingTo"]}}</span>
+            </div>      
+            <div ng-if='occurrence["dwc:locationRemarks"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.LOCATIONREMARKS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:locationRemarks"]}}</span>
+            </div>     
+            <div ng-if='occurrence["dwc:verbatimCoordinates"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.VERBATIMCOORDINATES}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimCoordinates"]}}</span>
+            </div>    
+            <div ng-if='occurrence["dwc:verbatimLatitude"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.VERBATIMLATITUDE}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimLatitude"]}}</span>
+            </div>        
+            <div ng-if='occurrence["dwc:verbatimLongitude"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.VERBATIMLONGITUDE}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimLongitude"]}}</span>
+            </div>     
+            <div ng-if='occurrence["dwc:verbatimCoordinateSystem"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.VERBATIMCOORDINATESYSTEM}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimCoordinateSystem"]}}</span>
+            </div>         
+            <div ng-if='occurrence["dwc:verbatimSRS"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.VERBATIMSRS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimSRS"]}}</span>
+            </div>       
+            <div ng-if='occurrence["dwc:decimalLatitude"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.DECIMALLATITUDE}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:decimalLatitude"]}}</span>
+            </div>        
+            <div ng-if='occurrence["dwc:decimalLongitude"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.DECIMALLONGITUDE}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:decimalLongitude"]}}</span>
+            </div>         
+            <div ng-if='occurrence["dwc:geodeticDatum"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.GEODETICDATUM}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:geodeticDatum"]}}</span>
+            </div>       
+            <div ng-if='occurrence["dwc:coordinateUncertaintyInMeters"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.COORDINATEUNCERTAINTYINMETERS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:coordinateUncertaintyInMeters"]}}</span>
+            </div>      
+            <div ng-if='occurrence["dwc:coordinatePrecision"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.COORDINATEPRECISION}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:coordinatePrecision"]}}</span>
+            </div>    
+            <div ng-if='occurrence["dwc:pointRadiusSpatialFit"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.POINTRADIUSSPATIALFIT}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:pointRadiusSpatialFit"]}}</span>
+            </div>        
+            <div ng-if='occurrence["dwc:footprintWKT"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.FOOTPRINTWKT}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:footprintWKT"]}}</span>
+            </div>        
+            <div ng-if='occurrence["dwc:footprintSRS"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.FOOTPRINTSRS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:footprintSRS"]}}</span>
+            </div> 
+            <div ng-if='occurrence["dwc:footprintSpatialFit"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.FOOTPRINTSPATIALFIT}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:footprintSpatialFit"]}}</span>
+            </div>   
+            <div ng-if='occurrence["dwc:georeferencedBy"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.GEOREFERENCEDBY}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:georeferencedBy"]}}</span>
+            </div>        
+            <div ng-if='occurrence["dwc:georeferenceProtocol"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.GEOREFERENCEPROTOCOL}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:georeferenceProtocol"]}}</span>
+            </div>    
+            <div ng-if='occurrence["dwc:georeferenceSources"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.GEOREFERENCESOURCES}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:georeferenceSources"]}}</span>
+            </div>  
+            <div ng-if='occurrence["dwc:georeferenceVerificationStatus"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.GEOREFERENCEVERIFICATIONSTATUS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:georeferenceVerificationStatus"]}}</span>
+            </div>       
+            <div ng-if='occurrence["dwc:georeferenceRemarks"]' class='row'>
+                <span class='col-md-4 col-xs-6'>{{translation.GEOREFERENCEREMARKS}}</span>
+                <span class='col-md-8 col-xs-6'>{{occurrence["dwc:georeferenceRemarks"]}}</span>
+            </div>  
+        </div>
+    </div>
+        
+    <div ng-if="geologicalContextSection" class="container">
+        <!-- Geological context 18 fields -->
+        <h3>{{translation.GEOLOGICALCONTEXT}}</h3>
+        <hr> 
+        <div ng-if='occurrence["dwc:geologicalContextID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.GEOLOGICALCONTEXTID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:geologicalContextID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:earliestEonOrLowestEonothem"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.EARLIESTEONORLOWESTEONOTHEM}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:earliestEonOrLowestEonothem"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:latestEonOrHighestEonothem"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.LATESTEONORHIGHESTEONOTHEM}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:latestEonOrHighestEonothem"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:earliestEraOrLowestErathem"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.EARLIESTERAORLOWESTERATHEM}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:earliestEraOrLowestErathem"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:latestEraOrHighestErathem"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.LATESTERAORHIGHESTERATHEM}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:latestEraOrHighestErathem"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:earliestPeriodOrLowestSystem"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.EARLIESTPERIODORLOWESTSYSTEM}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:earliestPeriodOrLowestSystem"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:latestPeriodOrHighestSystem"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.LATESTPERIODORHIGHESTSYSTEM}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:latestPeriodOrHighestSystem"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:earliestEpochOrLowestSeries"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.EARLIESTEPOCHORLOWESTSERIES}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:earliestEpochOrLowestSeries"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:latestEpochOrHighestSeries"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.LATESTEPOCHORHIGHESTSERIES}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:latestEpochOrHighestSeries"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:earliestAgeOrLowestStage"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.EARLIESTAGEORLOWESTSTAGE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:earliestAgeOrLowestStage"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:latestAgeOrHighestStage"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.LATESTAGEORHIGHESTSTAGE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:latestAgeOrHighestStage"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:lowestBiostratigraphicZone"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.LOWESTBIOSTRATIGRAPHICZONE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:lowestBiostratigraphicZone"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:highestBiostratigraphicZone"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.HIGHESTBIOSTRATIGRAPHICZONE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:highestBiostratigraphicZone"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:lithostratigraphicTerms"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.LITHOSTRATIGRAPHICTERMS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:lithostratigraphicTerms"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:group"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.GROUP}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:group"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:formation"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.FORMATION}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:formation"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:member"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.MEMBER}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:member"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:bed"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.BED}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:bed"]}}</span>
+        </div>
+        
+    </div>  
+    <div ng-if="identificationSection" class="container">
+        <!-- Identification 18 fields -->
+        <h3>{{translation.IDENTIFICATION}}</h3>
+        <hr>        
+        <div ng-if='occurrence["dwc:identificationID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.IDENTIFICATIONID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:identificationID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:identifiedBy"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.IDENTIFIEDBY}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:identifiedBy"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:dateIdentified"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.DATEIDENTIFIED}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:dateIdentified"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:identificationReferences"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.IDENTIFICATIONREFERENCES}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:identificationReferences"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:identificationRemarks"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.IDENTIFICATIONREMARKS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:identificationRemarks"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:identificationQualifier"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.IDENTIFICATIONQUALIFIER}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:identificationQualifier"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:typeStatus"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.TYPESTATUS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:typeStatus"]}}</span>
+        </div>
+        
+    </div>     
+    <div ng-if="taxonSection" class="container">
+        <!-- Taxon 32 fields -->
+        <h3>{{translation.TAXON}}</h3>
+        <hr>
+        <div ng-if='occurrence["dwc:taxonID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.TAXONID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:taxonID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:scientificNameID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.SCIENTIFICNAMEID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:scientificNameID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:acceptedNameUsageID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ACCEPTEDNAMEUSAGEID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:acceptedNameUsageID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:parentNameUsageID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.PARENTNAMEUSAGEID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:parentNameUsageID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:originalNameUsageID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ORIGINALNAMEUSAGEID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:originalNameUsageID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:nameAccordingToID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.NAMEACCORDINGTOID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:nameAccordingToID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:namePublishedInID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.NAMEPUBLISHEDINID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:namePublishedInID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:taxonConceptID"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.TAXONCONCEPTID}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:taxonConceptID"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:scientificName"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.SCIENTIFICNAME}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:scientificName"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:acceptedNameUsage"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ACCEPTEDNAMEUSAGE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:acceptedNameUsage"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:parentNameUsage"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.PARENTNAMEUSAGE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:parentNameUsage"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:originalNameUsage"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ORIGINALNAMEUSAGE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:originalNameUsage"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:nameAccordingTo"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.NAMEACCORDINGTO}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:nameAccordingTo"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:namePublishedIn"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.NAMEPUBLISHEDIN}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:namePublishedIn"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:higherClassification"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.HIGHERCLASSIFICATION}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:higherClassification"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:kingdom"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.KINGDOM}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:kingdom"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:phylum"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.PHYLUM}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:phylum"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:class"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.CLASS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:class"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:order"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.ORDER}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:order"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:family"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.FAMILY}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:family"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:genus"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.GENUS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:genus"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:subgenus"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.SUBGENUS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:subgenus"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:specificEpithet"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.SPECIFICEPITHET}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:specificEpithet"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:infraspecificEpithet"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.INFRASPECIFICEPITHET}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:infraspecificEpithet"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:taxonRank"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.TAXONRANK}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:taxonRank"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:verbatimTaxonRank"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.VERBATIMTAXONRANK}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:verbatimTaxonRank"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:scientificNameAuthorship"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.SCIENTIFICNAMEAUTHORSHIP}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:scientificNameAuthorship"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:vernacularName"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.VERNACULARNAME}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:vernacularName"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:nomenclaturalCode"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.NOMENCLATURALCODE}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:nomenclaturalCode"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:taxonomicStatus"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.TAXONOMICSTATUS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:taxonomicStatus"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:nomenclaturalStatus"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.NOMENCLATURALSTATUS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:nomenclaturalStatus"]}}</span>
+        </div>
+        <div ng-if='occurrence["dwc:taxonRemarks"]' class='row'>
+            <span class='col-md-4 col-xs-6'>{{translation.TAXONREMARKS}}</span>
+            <span class='col-md-8 col-xs-6'>{{occurrence["dwc:taxonRemarks"]}}</span>
+        </div>
+    </div>
+    &nbsp;
+    <alert ng-if="version > 1" type="'info'">{{translation.OLDERVERSION}} 
+        <a href='index.html#/occurrence/{{occurrence["dwc:occurrenceID"]}}/{{version-1}}' class="alert-link">{{translation.CLICKHERE}}</a>
+    </alert>
+</div>

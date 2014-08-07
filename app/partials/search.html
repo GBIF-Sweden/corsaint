@@ -1,0 +1,50 @@
+<header>
+    <div class="container">
+        <div id="header-welcome" class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h1>{{translation.RESULTSFOR}} {{dwc_scientificName}}</h1>
+                <h2>{{matches}} matches</h2>           
+            </div>
+        </div>
+    </div>
+</header>
+<div id="header-bottom-border">&nbsp;</div>
+<div class='container result-list'>
+    <alert  type="'info'">
+        <a href="{{downloadURL}}" target="_blank">{{translation.DOWNLOADTHISRESULT}}</a> ({{translation.UPTOONEMILLION}})
+    </alert>    
+    <table class="table table-bordered table-striped table-condensed table-responsive">
+        <thead>
+            <th class="fakeLink" title="{{translation.CLICKTOSORT}}" ng-class="sorted(1)" ng-click="changeSort(1,'dwc_scientificName,dwc_institutionCode,dwc_collectionCode,dwc_catalogNumber')">&nbsp;</th>
+            <th class="fakeLink" title="{{translation.CLICKTOSORT}}" ng-class="sorted(2)" ng-click="changeSort(2,'dwc_country,dwc_stateProvince')">{{translation.LOCATION}}</th>
+            <th class="fakeLink" title="{{translation.CLICKTOSORT}}" ng-class="sorted(3)" ng-click="changeSort(3,'dwc_basisOfRecord')">{{translation.BASISOFRECORD}}</th>
+            <th class="fakeLink" title="{{translation.CLICKTOSORT}}" ng-class="sorted(4)" ng-click="changeSort(4,'dwc_eventDate')">{{translation.EVENTDATE}}</th>
+            <th class="fakeLink" title="{{translation.CLICKTOSORT}}" ng-class="sorted(5)" ng-click="changeSort(5,'dwc_recordedBy')">{{translation.REPORTEDBY}}</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="result in results.response">
+                <td>
+                    <span class="text-muted text-minor">{{result.dwc_occurrenceID}} - {{result.dwc_institutionCode}} {{result.dwc_collectionCode}} {{result.dwc_catalogNumber}}</span><br>
+                    <a ng-href="#/occurrence/{{result.dwc_occurrenceID}}/{{result.bourgogneVersion}}">{{result.dwc_scientificName}}</a><br>
+                    <span class="text-muted text-minor">{{result.dc_modified}}</span>
+                </td>
+                <td>
+                    {{result.dwc_country}}<br>{{result.dwc_stateProvince}}<br>
+                    <span class="text-muted text-minor">
+                        {{result.dwc_decimalLatitude}}{{result.dwc_decimalLatitude && result.dwc_decimalLongitude?",":""}}
+                        {{result.dwc_decimalLongitude}}</span>
+                </td>
+                <td>
+                    <span>{{result.dwc_basisOfRecord}}</span>
+                </td>
+                <td>
+                    <span>{{result.dwc_eventDate}}</span>
+                </td>
+                <td>
+                    <span>{{result.dwc_recordedBy}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination style="cursor:pointer" total-items="matches" page="currentPage" max-size="maxSize" items-per-page="itemPerPage" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+</div>
