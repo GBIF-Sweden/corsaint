@@ -183,5 +183,7 @@
     "REPORTEDBY": "Reported by",
     "CLICKTOSORT": "Click to sort",
     "DOWNLOADTHISRESULT": "Download this result",
-    "UPTOONEMILLION": "Up to one million records"
+    "UPTOONEMILLION": "Up to one million records",
+    "YOURSEARCH": "your search",
+    "MATCHES": "matches"
 }

@@ -183,5 +183,7 @@
     "REPORTEDBY": "Rapporteur",
     "CLICKTOSORT": "Cliquez pour trier",
     "DOWNLOADTHISRESULT": "Téléchargez ce résultat",
-    "UPTOONEMILLION": "Jusqu'à un million d'enregistrements"
+    "UPTOONEMILLION": "Jusqu'à un million d'enregistrements",
+    "YOURSEARCH": "votre recherche",
+    "MATCHES": "enregistrements"
 }

@@ -183,5 +183,7 @@
     "REPORTEDBY": "Rapportör",
     "CLICKTOSORT": "Klicka för att sortera",
     "DOWNLOADTHISRESULT": "Ladda ner resultatet",
-    "UPTOONEMILLION": "Upp till en miljon poster"
+    "UPTOONEMILLION": "Upp till en miljon poster",
+    "YOURSEARCH": "din sökning",
+    "MATCHES": "träffar"
 }

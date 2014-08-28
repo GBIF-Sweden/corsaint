@@ -2,8 +2,8 @@
     <div class="container">
         <div id="header-welcome" class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h1>{{translation.RESULTSFOR}} {{dwc_scientificName}}</h1>
-                <h2>{{matches}} matches</h2>           
+                <h1>{{translation.RESULTSFOR}} {{dwc_scientificName?dwc_scientificName:translation.YOURSEARCH}}</h1>
+                <h2>{{matches}} {{translation.MATCHES}}</h2>           
             </div>
         </div>
     </div>
